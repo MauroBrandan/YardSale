@@ -1,15 +1,15 @@
 import React from 'react'
-import '../styles/navbar.css'
+import styles from '../styles/navbar.module.css'
 import IconMenu from '../assets/icons/icon_menu.svg'
 import Logo from '../assets/logos/logo_yard_sale.svg'
 import CartLogo from '../assets/icons/icon_shopping_cart.svg'
 
-export const Navbar = () => {
+const Navbar = () => {
 	return (
 		<nav>
-			<img src={IconMenu} alt='menu' className='menu' />
-			<div className='navbar-left'>
-				<img src={Logo} alt='logo' className='logo' />
+			<img src={IconMenu} alt='menu' className={styles.menu} />
+			<div className={styles['navbar-left']}>
+				<img src={Logo} alt='logo' className={styles.logo} />
 				<ul>
 					<li>
 						<a href='/'>All</a>
@@ -31,10 +31,10 @@ export const Navbar = () => {
 					</li>
 				</ul>
 			</div>
-			<div className='navbar-right'>
+			<div className={styles['navbar-right']}>
 				<ul>
-					<li className='navbar-email'>maurobrandan.mb@gmail.com</li>
-					<li className='navbar-shopping-cart'>
+					<li className={styles['navbar-email']}>maurobrandan.mb@gmail.com</li>
+					<li className={styles['navbar-shopping-cart']}>
 						<img src={CartLogo} alt='shopping cart' />
 						<div>5</div>
 					</li>
@@ -43,3 +43,5 @@ export const Navbar = () => {
 		</nav>
 	)
 }
+
+export default Navbar
