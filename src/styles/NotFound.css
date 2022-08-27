@@ -1,0 +1,28 @@
+.NotFound {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	max-width: 320px;
+	margin: 0 auto;
+}
+.NotFound .title {
+	font-size: 10rem;
+	letter-spacing: 15px;
+}
+
+.NotFound :not(p:nth-child(1)) {
+	font-size: 2rem;
+}
+
+.primary-button {
+	background-color: var(--hospital-green);
+	border-radius: 8px;
+	border: none;
+	color: var(--white);
+	width: 100%;
+	cursor: pointer;
+	font-size: var(--md);
+	font-weight: bold;
+	height: 50px;
+}

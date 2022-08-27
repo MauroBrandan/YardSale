@@ -1,20 +1,21 @@
 import React from 'react'
-import '../styles/login.css'
+import '../styles/Login.css'
+import Logo from '../assets/logos/logo_yard_sale.svg'
 
-export const Login = () => {
+const Login = () => {
 	return (
-		<div className='login'>
-			<div className='form-container'>
-				<img src='../assets/logos/logo_yard_sale.svg' alt='logo' className='logo' />
+		<div className='Login'>
+			<div className='Login-container'>
+				<img src={Logo} alt='logo' className='logo' />
 				<form action='/' className='form'>
 					<label htmlFor='email' className='label'>
 						Email address
 					</label>
 					<input
-						type='email'
+						type='text'
 						id='email'
-						placeholder='correo@gmail.com'
-						className='input'
+						placeholder='email@example.cm'
+						className='input input-email'
 					/>
 					<label htmlFor='password' className='label'>
 						Password
@@ -27,13 +28,15 @@ export const Login = () => {
 					/>
 					<input
 						type='submit'
-						defaultValue='Log in'
+						value='Log in'
 						className='primary-button login-button'
 					/>
 					<a href='/'>Forgot my password</a>
 				</form>
-				<button className='secondary-button'>Sign Up</button>
+				<button className='secondary-button signup-button'>Sign up</button>
 			</div>
 		</div>
 	)
 }
+
+export default Login
