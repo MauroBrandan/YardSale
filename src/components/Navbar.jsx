@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import styles from '../styles/navbar.module.css'
+import AppContext from '../context/AppContext'
 import IconMenu from '../assets/icons/icon_menu.svg'
 import Logo from '../assets/logos/logo_yard_sale.svg'
 import CartLogo from '../assets/icons/icon_shopping_cart.svg'
@@ -7,6 +8,9 @@ import Menu from './Menu.jsx'
 
 const Navbar = () => {
 	const [toggle, settoggle] = useState(false)
+	const {
+		state: { cart },
+	} = useContext(AppContext)
 
 	const handleToogle = () => {
 		settoggle(!toggle)
@@ -45,7 +49,7 @@ const Navbar = () => {
 					</li>
 					<li className={styles['navbar-shopping-cart']}>
 						<img src={CartLogo} alt='shopping cart' />
-						<div>5</div>
+						{cart.length > 0 && <div>{cart.length}</div>}
 					</li>
 				</ul>
 			</div>
