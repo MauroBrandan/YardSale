@@ -5,16 +5,14 @@ import IconMenu from '../assets/icons/icon_menu.svg'
 import Logo from '../assets/logos/logo_yard_sale.svg'
 import CartLogo from '../assets/icons/icon_shopping_cart.svg'
 import Menu from './Menu.jsx'
+import MyOrder from '../containers/MyOrder.jsx'
 
 const Navbar = () => {
-	const [toggle, settoggle] = useState(false)
+	const [toggleMenu, setToggleMenu] = useState(false)
+	const [toggleOrder, setToggleOrder] = useState(false)
 	const {
 		state: { cart },
 	} = useContext(AppContext)
-
-	const handleToogle = () => {
-		settoggle(!toggle)
-	}
 
 	return (
 		<nav>
@@ -44,17 +42,24 @@ const Navbar = () => {
 			</div>
 			<div className={styles['navbar-right']}>
 				<ul>
-					<li className={styles['navbar-email']} onClick={handleToogle}>
+					<li
+						className={styles['navbar-email']}
+						onClick={() => setToggleMenu(!toggleMenu)}
+					>
 						maurobrandan.mb@gmail.com
 					</li>
-					<li className={styles['navbar-shopping-cart']}>
+					<li
+						className={styles['navbar-shopping-cart']}
+						onClick={() => setToggleOrder(!toggleOrder)}
+					>
 						<img src={CartLogo} alt='shopping cart' />
 						{cart.length > 0 && <div>{cart.length}</div>}
 					</li>
 				</ul>
 			</div>
 
-			{toggle && <Menu />}
+			{toggleMenu && <Menu />}
+			{toggleOrder && <MyOrder />}
 		</nav>
 	)
 }

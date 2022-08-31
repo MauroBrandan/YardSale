@@ -2,17 +2,16 @@ import React from 'react'
 import '../styles/OrderItem.css'
 import IconClose from '../assets/icons/icon_close.png'
 
-const OrderItem = () => {
+const OrderItem = ({ item }) => {
+	const { images, title, price } = item
+
 	return (
 		<div className='OrderItem'>
 			<figure>
-				<img
-					src='https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
-					alt='bike'
-				/>
+				<img src={images[0]} alt={title} />
 			</figure>
-			<p>Bike</p>
-			<p>$30,00</p>
+			<p>{title}</p>
+			<p>${price}</p>
 			<img src={IconClose} alt='close' />
 		</div>
 	)

@@ -6,6 +6,7 @@
 	position: absolute;
 	right: 68px;
 	top: 60px;
+	background-color: var(--white);
 }
 .Menu ul {
 	list-style: none;
